@@ -53,8 +53,10 @@
                         Extra Bed:
                         <div class="form-check form-check-inline">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="Extrabed" value="0"> No <input
-                                    class="form-check-input" type="radio" name="Extrabed" value="1"> Yes
+                                <input class="form-check-input" type="radio" name="ExtraBed" value="0"> No 
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="ExtraBed" value="1"> Yes
+                            </label>
                             </label>
                         </div>
                         <div class="form-group">
@@ -82,16 +84,13 @@
         </select><br><br>
         <div class="container">
             <div class="row">
-
                 <div class="col-sm">
-                <button type="submit" class="btn btn-primary" name="someAction">Submit</button></form>
+               <input type="button" name="back" class="btn btn-primary" onclick="history.back()" value="Back"> </button>
                 </div>
                 <div class="col-sm-text-left">
-                <form action="../index.php" method="post">
-               <button type="submit" name="back" class="btn btn-primary">Back</button></form>
+                <button type="submit" class="btn btn-primary" name="someAction">Submit</button></form>
                </div>
             </div>
-
         </div>
     </div>
 </div>
