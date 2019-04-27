@@ -16,9 +16,9 @@ if($refDate<=$maxDate){
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function DateRoomValidation($thisRoomID,$thisADate){
+function DateRoomValidation($thisRoomID,$thisADate,$thisconnect){
     ////////////////////////Database Prepare////////////////////////
-    $connect = mysqli_connect("localhost","root","","Holidayvillage");
+    $connect = $thisconnect;
     $sql ='select date
            from staydetail 
            where RoomID="'.$thisRoomID.'"';
@@ -37,7 +37,6 @@ function DateRoomValidation($thisRoomID,$thisADate){
         if($row[0] == $currentDate){
                 console_log($row[0]." = ".$currentDate);
                 alert("Imposible date in room");
-            mysqli_close($connect);
             return false;
         }//if
         else{
@@ -45,12 +44,30 @@ function DateRoomValidation($thisRoomID,$thisADate){
         }//else
     }//foreach
     }//while
-    mysqli_close($connect);
     console_log("valid date");
     return true;
     }
     }///function
     ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+function validateCustomer($thisFName,$thisLName){
+    $testFName = test_input($thisFName);
+    if (!preg_match("/^[A-Za-z]+(\s[A-Za-z]+)*$/",$testFName)){
+        alert("Only letters allowed in Firstname"); 
+        echo "<br>";
+        return false;
+    }////if
+
+    $testLName = test_input($thisLName);
+    if (!preg_match("/^[A-Za-z]+(\s[A-Za-z]+)*$/",$testLName)){
+        alert("Only letters allowed in Lastname"); 
+        echo "<br>";
+        return false;
+    }///if
+    return true;
+   }///function
+///////////////////////////////////////////////////////////////////////////////////////////////////
     
     
 ///////////////////////////////////////////////////////////////////////////////////////////////////
@@ -61,14 +78,4 @@ function DateRoomValidation($thisRoomID,$thisADate){
     return $data;
   }///function
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function console_log($data) {
-    $output  = "<script>console.log( 'PHP debugger: ";
-    $output .= json_encode(print_r($data, true));
-    $output .= "' );</script>";
-    echo $output;
-  }
-////////////////////////////////////////////////////////////////////////////////////////
-function alert($msg) {
-    echo "<script type='text/javascript'>alert('$msg');</script>";
-}
 ?>
