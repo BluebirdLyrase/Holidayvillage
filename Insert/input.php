@@ -8,14 +8,11 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
-
-
 <div class="container">
     <h4 class="text-center"><b>Insert</b></h4>
     <br><br>
@@ -50,47 +47,52 @@
                             <input type="date" class="form-control" name="CheckIn">
                         </div>
                         <div class="form-group">
-                          <label for="CheckOut">Check-Out date</label>
-                          <input type="date" class="form-control" name="CheckOut" >
+                            <label for="CheckOut">Check-Out date</label>
+                            <input type="date" class="form-control" name="CheckOut">
                         </div>
-                        <p class="card-text">Text</p>
+                        Extra Bed:
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="Extrabed" value="0"> No <input
+                                    class="form-check-input" type="radio" name="Extrabed" value="1"> Yes
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Room ID:</label>
+                            <select class="form-control" name="RoomID">
+                                <?php
+                                   $connect = mysqli_connect("localhost","root","","holidayvillage");
+                                   $sql ='SELECT RoomID FROM room';
+                                   $result = mysqli_query($connect,$sql);
+                                   if(!$result){
+                                     echo mysqli_error($connect);
+                                   }else{
+                                   
+                                   while ($row = mysqli_fetch_array($result,MYSQLI_NUM)){
+                                     echo '<option value='.$row[0].'>'.$row[0].'</option>';
+                                   }
+                                   
+                                   }
+                                   ?>
+                            </select>
+                        </div>
                 </div>
             </div>
         </div>
-        Extra Bed: <select name="ExtraBed">
-            <option value="0">No</option>
-            <option value="1">Yes</option>
         </select><br><br>
-        Room ID:<select name="RoomID">
+        <div class="container">
+            <div class="row">
 
-            <?php
-$connect = mysqli_connect("localhost","root","","holidayvillage");
-$sql ='SELECT RoomID
-FROM room';
-$result = mysqli_query($connect,$sql);
-if(!$result){
-  echo mysqli_error($connect);
-}else{
+                <div class="col-sm">
+                <button type="submit" class="btn btn-primary" name="someAction">Submit</button></form>
+                </div>
+                <div class="col-sm-text-left">
+                <form action="../index.php" method="post">
+               <button type="submit" name="back" class="btn btn-primary">Back</button></form>
+               </div>
+            </div>
 
-while ($row = mysqli_fetch_array($result,MYSQLI_NUM)){
-  echo '<option value='.$row[0].'>'.$row[0].'</option>';
-}
-
-}
-?>
-
-        </select><br><br>
-        <input type="submit" name="someAction" value="submit">
-        </form>
-
-        <form action="../index.php" method="post">
-            <input type="submit" name="back" value="Back">
+        </div>
     </div>
-
-
-
 </div>
-</div>
-</form>
-
 </html>
