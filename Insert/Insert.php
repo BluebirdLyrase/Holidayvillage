@@ -96,6 +96,7 @@ function getADate($thischeckIn,$thischeckOut){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+
 function insertCustomer($thisFName,$thisLName,$thisconnect){
     $connect = $thisconnect;
     $sql = 'INSERT INTO customer
@@ -108,6 +109,6 @@ function insertCustomer($thisFName,$thisLName,$thisconnect){
     alert("insert customer success");
    }///else
 }///function
-
+mysqli_close($connect)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ?>
