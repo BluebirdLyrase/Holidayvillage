@@ -15,11 +15,13 @@ if(!$result){
 while ($row = mysqli_fetch_array($result,MYSQLI_NUM)){
   echo '<option value='.$row[0].'>'.$row[0].'-'.$row[1].'-'.$row[2].'</option>';
 }
+}
 ?>
+</select>
 Extra Bed:  <br>
 <input type="Radio" name="ExtraBed" value="0"> No  <br>
 <input type="Radio" name="ExtraBed" value="1"> Yes  <br>
-</select><br><br>
+<br><br>
 Room ID:<select name="RoomID">
 <?php
 $sql2 ='SELECT RoomID
