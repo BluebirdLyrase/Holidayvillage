@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,9 +15,7 @@
 
 <body>
 ื   <div class="container">
-=======
 
->>>>>>> f3c3e6f0be3a8bd16891857d24faa50617eb6afc
 <form action="Insert/input.php" method="post">
 <input type="submit" name="button" value="insert" />
 </form>
