@@ -16,9 +16,9 @@ if($refDate<=$maxDate){
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function DateRoomValidation($thisRoomID,$thisADate){
+function DateRoomValidation($thisRoomID,$thisADate,$thisconnect){
     ////////////////////////Database Prepare////////////////////////
-    $connect = mysqli_connect("localhost","root","","Holidayvillage");
+    $connect = $thisconnect;
     $sql ='select date
            from staydetail 
            where RoomID="'.$thisRoomID.'"';
@@ -37,7 +37,6 @@ function DateRoomValidation($thisRoomID,$thisADate){
         if($row[0] == $currentDate){
                 console_log($row[0]." = ".$currentDate);
                 alert("Imposible date in room");
-            mysqli_close($connect);
             return false;
         }//if
         else{
@@ -45,7 +44,6 @@ function DateRoomValidation($thisRoomID,$thisADate){
         }//else
     }//foreach
     }//while
-    mysqli_close($connect);
     console_log("valid date");
     return true;
     }

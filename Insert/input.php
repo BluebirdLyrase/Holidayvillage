@@ -13,10 +13,9 @@ Customer type: <select name="Customertype">
 </select><br><br>
 Check-in Date: <input type="date" name="CheckIn"><br><br>
 Check-out Date: <input type="date" name="CheckOut"><br><br>
-Extra Bed: <select name="ExtraBed">
-  <option value="0">No</option>
-  <option value="1">Yes</option>
-</select><br><br>
+Extra Bed:  <br>
+<input type="Radio" name="ExtraBed" value="0"> No  <br>
+<input type="Radio" name="ExtraBed" value="1"> Yes  <br>
 Room ID:<select name="RoomID">
 
 <?php

@@ -9,20 +9,20 @@ $checkIn = $_POST["CheckIn"];
 $checkOut = $_POST["CheckOut"];
 $extraBed = $_POST["ExtraBed"];
 $customerType = $_POST["Customertype"];
-
+$connect = mysqli_connect("localhost","root","","Holidayvillage");
 console_log("sdfsdf");
 ///////////////////////ตรวจสอบ check in out ก่อนสตรวจสอบอย่างอื่น ป้องกัน $ADate เน่า///////////////////////
-if(checkinoutValidation($checkIn,$checkOut)){
+if(checkinoutValidation($checkIn,$checkOut,$connect)){
     console_log("Valid checkin checkout Value ");
     $ADate = getADate($checkIn,$checkOut);
-    if(validateCustomer($FName,$LName)&&DateRoomValidation($RoomID,$ADate)){
+    if(validateCustomer($FName,$LName,$connect)&&DateRoomValidation($RoomID,$ADate,$connect)){
         console_log("Valid FName LName RoomID");
         if($customerType=="new"){
-            insertCustomer($FName,$LName);
+            insertCustomer($FName,$LName,$connect);
             }///if
-            $CustomerID = getCustomerID($FName,$LName);
+            $CustomerID = getCustomerID($FName,$LName,$connect);
             if($CustomerID!=Null){
-            insertStaydetail($ADate,$RoomID,$extraBed,$CustomerID);
+            insertStaydetail($ADate,$RoomID,$extraBed,$CustomerID,$connect);
             }else{
             echo "Firstname and Lastname don't match the existing ID";
             }
@@ -33,11 +33,12 @@ if(checkinoutValidation($checkIn,$checkOut)){
 }else{
     include 'input.php';
 }///else
+mysqli_close($connect);
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-function getCustomerID($thisFName,$thisLName){
+function getCustomerID($thisFName,$thisLName,$thisconnect){
+    $connect = $thisconnect;
     console_log("getting CustomerID");
-    $connect = mysqli_connect("localhost","root","","Holidayvillage");
     $sql ='select COUNT(CustomerID),CustomerID
            from customer
            where Fname="'.$thisFName.'" AND Lname="'.$thisLName.'"';
@@ -60,9 +61,9 @@ function getCustomerID($thisFName,$thisLName){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-function insertStaydetail($thisADate,$thisRoomID,$thisExtraBed,$thisCustomerID){
+function insertStaydetail($thisADate,$thisRoomID,$thisExtraBed,$thisCustomerID,$thisconnect){
+    $connect = $thisconnect;
     console_log("Inserting to Staydetail");
-    $connect = mysqli_connect("localhost","root","","Holidayvillage");
     foreach($thisADate as $currentDate) {
         console_log("Inserting to Staydetail ".$currentDate);
     $sql ='INSERT INTO staydetail
@@ -95,8 +96,12 @@ function getADate($thischeckIn,$thischeckOut){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 function insertCustomer($thisFName,$thisLName){
-    $connect = mysqli_connect("localhost","root","","holidayvillage");
+=======
+function insertCustomer($thisFName,$thisLName,$thisconnect){
+    $connect = $thisconnect;
+>>>>>>> f3c3e6f0be3a8bd16891857d24faa50617eb6afc
     $sql = 'INSERT INTO customer
     VALUES(Null,"'.$thisFName.'","'.$thisLName.'")';
     $result = mysqli_query($connect,$sql);
@@ -106,8 +111,7 @@ function insertCustomer($thisFName,$thisLName){
    }else{
     alert("insert customer success");
    }///else
-    mysqli_close($connect);
 }///function
-
+mysqli_close($connect)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ?>
