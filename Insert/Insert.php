@@ -1,5 +1,6 @@
 <?php
-include 'validate.php';
+include '../validate.php';
+include '../script.php';
 $FName = $LName = "";
 $FName = $_POST["Fname"];
 $LName = $_POST["Lname"];
@@ -33,6 +34,7 @@ if(checkinoutValidation($checkIn,$checkOut)){
     include 'input.php';
 }///else
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
 function getCustomerID($thisFName,$thisLName){
     console_log("getting CustomerID");
     $connect = mysqli_connect("localhost","root","","Holidayvillage");
@@ -57,6 +59,7 @@ function getCustomerID($thisFName,$thisLName){
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
 function insertStaydetail($thisADate,$thisRoomID,$thisExtraBed,$thisCustomerID){
     console_log("Inserting to Staydetail");
     $connect = mysqli_connect("localhost","root","","Holidayvillage");
@@ -69,10 +72,8 @@ function insertStaydetail($thisADate,$thisRoomID,$thisExtraBed,$thisCustomerID){
 alert("insert Staydetail Successfully");
 }
 
-///////////console_log();////////////////////////////////////////////////////////////////////////////////////////
-
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////
+
 function getADate($thischeckIn,$thischeckOut){
     console_log("creating ADate");
     $ADate = array();
@@ -91,29 +92,9 @@ function getADate($thischeckIn,$thischeckOut){
     
     return $ADate;    
 }///function
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function validateCustomer($thisFName,$thisLName){
-    $testFName = test_input($thisFName);
-    if (!preg_match("/^[A-Za-z]+(\s[A-Za-z]+)*$/",$testFName)){
-        alert("Only letters allowed in Firstname"); 
-        echo "<br>";
-        return false;
-    }////if
 
-    $testLName = test_input($thisLName);
-    if (!preg_match("/^[A-Za-z]+(\s[A-Za-z]+)*$/",$testLName)){
-        alert("Only letters allowed in Lastname"); 
-        echo "<br>";
-        return false;
-    }///if
-    return true;
-   }///function
-///////////////////////////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
 function insertCustomer($thisFName,$thisLName){
     $connect = mysqli_connect("localhost","root","","holidayvillage");
     $sql = 'INSERT INTO customer
@@ -127,7 +108,6 @@ function insertCustomer($thisFName,$thisLName){
    }///else
     mysqli_close($connect);
 }///function
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-
-
 ?>
