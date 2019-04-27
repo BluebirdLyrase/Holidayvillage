@@ -1,7 +1,7 @@
 <?php
 include '../validate.php';
 include '../script.php';
-$FName = $LName = "";
+$FName = $LName = ""; 
 $FName = $_POST["Fname"];
 $LName = $_POST["Lname"];
 $RoomID = $_POST["RoomID"];
