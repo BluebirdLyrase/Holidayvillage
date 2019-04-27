@@ -17,16 +17,17 @@ if(!$result){
 while ($row = mysqli_fetch_array($result,MYSQLI_NUM)){
   echo '<option value='.$row[0].'>'.$row[0].'-'.$row[1].'-'.$row[2].'</option>';
 }
-echo '</select>';
+echo '</select><BR><BR>';
 }
 ?>
 
 
 Check-in Date: <input type="date" name="CheckIn"><br><br>
 Check-out Date: <input type="date" name="CheckOut"><br><br>
-Extra Bed: <select name="ExtraBed">
-  <option value="0">No</option>
-  <option value="1">Yes</option>
+Extra Bed:  <br>
+<input type="Radio" name="ExtraBed" value="0"> No  <br>
+<input type="Radio" name="ExtraBed" value="1"> Yes  <br>
+
 
 
 </select><br><br>
