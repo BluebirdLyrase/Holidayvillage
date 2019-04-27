@@ -109,6 +109,5 @@ function insertCustomer($thisFName,$thisLName,$thisconnect){
     alert("insert customer success");
    }///else
 }///function
-mysqli_close($connect)
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 ?>

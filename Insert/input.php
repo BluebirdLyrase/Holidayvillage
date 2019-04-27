@@ -53,8 +53,8 @@
                         Extra Bed:
                         <div class="form-check form-check-inline">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="Extrabed" value="0"> No <input
-                                    class="form-check-input" type="radio" name="Extrabed" value="1"> Yes
+                                <input class="form-check-input" type="radio" name="ExtraBed" value="0"> No <input
+                                    class="form-check-input" type="radio" name="ExtraBed" value="1"> Yes
                             </label>
                         </div>
                         <div class="form-group">
