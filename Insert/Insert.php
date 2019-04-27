@@ -96,12 +96,9 @@ function getADate($thischeckIn,$thischeckOut){
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<< HEAD
-function insertCustomer($thisFName,$thisLName){
-=======
+
 function insertCustomer($thisFName,$thisLName,$thisconnect){
     $connect = $thisconnect;
->>>>>>> f3c3e6f0be3a8bd16891857d24faa50617eb6afc
     $sql = 'INSERT INTO customer
     VALUES(Null,"'.$thisFName.'","'.$thisLName.'")';
     $result = mysqli_query($connect,$sql);
