@@ -1,9 +1,7 @@
-<html>
+
 
 <form action="insertByID.php" method="post">
-
 <b>Insert</b><br><br>
-
 CustomerID:<select name="CustomerID">
 <?php
 $connect = mysqli_connect("localhost","root","","holidayvillage");
@@ -21,9 +19,6 @@ while ($row = mysqli_fetch_array($result,MYSQLI_NUM)){
 Extra Bed:  <br>
 <input type="Radio" name="ExtraBed" value="0"> No  <br>
 <input type="Radio" name="ExtraBed" value="1"> Yes  <br>
-
-
-
 </select><br><br>
 Room ID:<select name="RoomID">
 <?php
@@ -48,4 +43,3 @@ mysqli_close($connect)
 <form action="../index.php" method="post">
 <input type="submit" name="back" value="Back">
 </form>
-</html>
