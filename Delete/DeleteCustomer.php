@@ -5,11 +5,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-
   <body>
     <?php
     $connect = mysqli_connect("localhost","root","","holidayvillage");
@@ -23,15 +22,24 @@
         }elseif($numrows == 0){
             echo '<b>There is no customer to delete!</b>';
         }else{
-            echo '<table border = "1" cellspacing = "0" cellpadding = "3"';
+            echo  ('<div class="container mt-3">
+      <table class="table table-dark table-striped text-center" >
+          <thead>
+              <tr>
+                  <th>ID</th>
+                  <th>First Name</th>
+                  <th>Lastname</th>
+                  <th><i class="fas fa-user-minus fa-2x"></i></th>
+              </tr>
+          </thead>');
             while ($row = mysqli_fetch_array($result)){
                 echo '<form name = "frmDelete'.$row['CustomerID'].'"method = "post" action = "DeleteCustomer2.php">'."\n";
                 echo '<tr>';
                 for($i = 0; $i < $numfields; $i++){
                     echo '<td>'.$row[$i].'&nbsp;</td>'."\n";
                 }
-                echo '<input type = "hidden" name = "id" value = "'.$row['CustomerID'].'">'."\n";
-                echo '<td><input name = "smtDelete" type = "submit" value = "Delete" onClick = "return confirmDelete();"></td>'."\n";
+                echo '<input type = "hidden" name = "id" value = "'.$row['CustomerID'].'"  >'."\n";
+                echo '<td><input class="btn btn-danger" name = "smtDelete" type = "submit" value = "Delete" onClick = "return confirmDelete();"></td>'."\n";
                 echo '</tr>'."\n";
                 echo '</form>'."\n";
             }
@@ -40,6 +48,7 @@
     }
     mysqli_close($connect);
     ?>
+      </div>
     <!-- Optional JavaScript -->
     <script language = "JavaScript">
     function confirmDelete(){
