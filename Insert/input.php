@@ -32,8 +32,8 @@
                             <div class="form-group">
                                 <label for="Customertype">Customer type:</label>
                                 <select class="form-control" name="Customertype">
-                                    <option value="old">Old Customer</option>
                                     <option value="new">New Customer</option>
+                                    <option value="old">Old Customer</option>
                                 </select>
                             </div>
                 </div>
@@ -52,9 +52,9 @@
                         Extra Bed:
                         <div class="form-check form-check-inline">
                             <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="ExtraBed" value="0"> No 
+                                <input class="form-check-input" type="radio" name="ExtraBed" value="0" checked> No 
                                 <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="ExtraBed" value="1"> Yes
+                                <input class="form-check-input" type="radio" name="ExtraBed" value="1" > Yes
                             </label>
                             </label>
                         </div>
@@ -74,6 +74,7 @@
                                    }
                                    
                                    }
+                                   mysqli_close($connect);
                                    ?>
                             </select>
                         </div>

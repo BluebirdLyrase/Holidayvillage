@@ -3,7 +3,6 @@ include '../validate.php';
 include '../script.php';
 include 'InsertFunction.php';
 
-$FName = $LName = "";
 $FName = $_POST["Fname"];
 $LName = $_POST["Lname"];
 $RoomID = $_POST["RoomID"];
@@ -28,14 +27,17 @@ if(checkinoutValidation($checkIn,$checkOut,$connect)){
             }else{
             echo "Firstname and Lastname don't match the existing ID";
             }
+            mysqli_close($connect);
             include 'input.php';
         }else{
+            mysqli_close($connect);
             include 'input.php';
         }///else
 }else{
+    mysqli_close($connect);
     include 'input.php';
 }///else
-mysqli_close($connect);
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 function getCustomerID($thisFName,$thisLName,$thisconnect){
@@ -51,7 +53,8 @@ function getCustomerID($thisFName,$thisLName,$thisconnect){
         while ($row = mysqli_fetch_array($result)){
             if($row[0]>1){
                 alert("There are 2 Customer with the same name. Use Customer ID to insert Directly by IDinsert.");
-             include 'index2.php';
+                mysqli_close($connect); 
+                include 'index2.php';
                  return Null;
             }else{
              console_log("CustomerID is ".$row[1]);
