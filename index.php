@@ -32,8 +32,12 @@
 <input type="submit" name="button" value="Update" />
 </form>
 
-<form action="Search/input.php" method="post">
-<input type="submit" name="button" value="Delete" />
+<form action="DeleteUpdate/InputDeleteCustomer.php" method="post">
+<input type="submit" name="button" value="DeleteCustomer" />
+</form>
+
+<form action="DeleteUpdate/InputDeleteStaydetail.php" method="post">
+<input type="submit" name="button" value="DeleteStaydetail" />
 </form>
 
 <form action="Search/input.php" method="post">

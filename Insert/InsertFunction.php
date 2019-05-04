@@ -8,7 +8,12 @@ function insertStaydetail($thisADate,$thisRoomID,$thisExtraBed,$thisCustomerID,$
     VALUES(Null,"'.$thisCustomerID.'","'.$currentDate.'","'.$thisExtraBed.'","'.$thisRoomID.'")';
     $result = mysqli_query($connect,$sql);
 }
+if(!$result){
+    alert(mysqli_error($connect));
+}
+    else{
 alert("insert Staydetail Successfully");
+}
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
