@@ -46,5 +46,5 @@ mysqli_close($connect)
 </form>
 
 <form action="../index.php" method="post">
-<input type="submit" name="back" value="Back">
+<input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'" value="Back"> </button>
 </form>

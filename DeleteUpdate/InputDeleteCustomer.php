@@ -49,7 +49,7 @@
     
     mysqli_close($connect);
     ?>
-    <br><input type="button" name="back" class="btn btn-primary" onclick="history.back()" value="Back"> </button>
+    <br><input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'" value="Back"> </button>
       </div>
     <!-- Optional JavaScript -->
     <script language = "JavaScript">

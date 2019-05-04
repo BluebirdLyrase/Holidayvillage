@@ -85,7 +85,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm">
-               <input type="button" name="back" class="btn btn-primary" onclick="history.back()" value="Back"> </button>
+               <input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'" value="Back"> </button>
                 </div>
                 <div class="col-sm-text-left">
                 <button type="submit" class="btn btn-primary" name="someAction">Submit</button></form>
