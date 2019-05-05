@@ -29,6 +29,7 @@
                   <th>First Name</th>
                   <th>Lastname</th>
                   <th><i class="fas fa-user-minus fa-2x"></i></th>
+                  <th><i class="fas fa-edit fa-2x"></i></th>
               </tr>
           </thead>');
             while ($row = mysqli_fetch_array($result)){

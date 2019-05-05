@@ -36,6 +36,7 @@
                   <th>Extra Bed</th>
                   <th>Room</th>
                   <th><i class="far fa-calendar-minus fa-2x"></i></th>
+                  <th><i class="fas fa-edit fa-2x"></i></th>
               </tr>
           </thead>');
             while ($row = mysqli_fetch_array($result)){
