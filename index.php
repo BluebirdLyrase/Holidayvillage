@@ -33,7 +33,7 @@
 </form>
 
 <form action="Search/input.php" method="post">
-<input type="submit" name="button" value="SearchData" />
+<input type="submit" name="button" value="Search/Input.php" />
 </form>
     
 </div>
