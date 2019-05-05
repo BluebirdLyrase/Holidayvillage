@@ -12,7 +12,6 @@ $result = mysqli_query($connect,$sql);
 if(!$result){
   echo mysqli_error($connect);
 }else{
-
 while ($row = mysqli_fetch_array($result,MYSQLI_NUM)){
   echo '<option value='.$row[0].'>'.$row[0].'-'.$row[1].'-'.$row[2].'</option>';
 }
