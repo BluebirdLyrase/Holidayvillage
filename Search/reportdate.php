@@ -17,37 +17,14 @@ while ($row = mysqli_fetch_array($minresult)){
     $min = $row["MIN(Date)"];
 }
 $NextDate =date_create($min) ;
-$NextDate->modify('+1 day');
 $i = 1;
 
-    echo '<table border = "1">
-    <th>OrderID</th> 
-    <th>CustomerID</th> 
-    <th>Firstname</th> 
-    <th>Lastname</th> 
-    <th>Date</th> 
-    <th>Extrabed</th> 
-    <th>RoomID</th> 
-    <th>RoomGrade</th> 
-    <th>RoomPrice</th> 
-    ';
 
       while ($row = mysqli_fetch_array($result)){
-        echo '<tr>';
-              echo '<td>'.$row["OrderID"].'&nbsp;</td>'."\n";
-              echo '<td>'.$row["CustomerID"].'&nbsp;</td>'."\n";
-              echo '<td>'.$row["Fname"].'&nbsp;</td>'."\n";
-              echo '<td>'.$row["Lname"].'&nbsp;</td>'."\n";
-              echo '<td>'.$row["Date"].'&nbsp;</td>'."\n";
-              echo '<td>'.$row["Extrabed"].'&nbsp;</td>'."\n";
-              echo '<td>'.$row["RoomID"].'&nbsp;</td>'."\n";
-              echo '<td>'.$row["RoomGrade"].'&nbsp;</td>'."\n";
-              echo '<td>'.$row["RoomPrice"].'&nbsp;</td>'."\n";
-          echo '</tr>';
-          $Date = $row["Date"];
-          $CurrentDate =date_create($Date) ;
+        $Date = $row["Date"];
+        $CurrentDate =date_create($Date) ;
         if($CurrentDate>=$NextDate){
-            echo "Day ".$i;
+            
             echo '</table><br>';
             echo '<table border = "1">
             <th>OrderID</th> 
@@ -60,8 +37,22 @@ $i = 1;
             <th>RoomGrade</th> 
             <th>RoomPrice</th>';
             $NextDate->modify('+1 day');
+            echo "Day ".$i;
             $i++;
         }
+        echo '<tr>';
+              echo '<td>'.$row["OrderID"].'&nbsp;</td>'."\n";
+              echo '<td>'.$row["CustomerID"].'&nbsp;</td>'."\n";
+              echo '<td>'.$row["Fname"].'&nbsp;</td>'."\n";
+              echo '<td>'.$row["Lname"].'&nbsp;</td>'."\n";
+              echo '<td>'.$row["Date"].'&nbsp;</td>'."\n";
+              echo '<td>'.$row["Extrabed"].'&nbsp;</td>'."\n";
+              echo '<td>'.$row["RoomID"].'&nbsp;</td>'."\n";
+              echo '<td>'.$row["RoomGrade"].'&nbsp;</td>'."\n";
+              echo '<td>'.$row["RoomPrice"].'&nbsp;</td>'."\n";
+          echo '</tr>';
+
+
       }
       echo '</table>';
     

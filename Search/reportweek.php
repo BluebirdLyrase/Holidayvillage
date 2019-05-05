@@ -16,23 +16,30 @@ $minresult = mysqli_query($connect,$minsql);
 while ($row = mysqli_fetch_array($minresult)){ 
     $min = $row["MIN(Date)"];
 }
-$Nextweek =date_create($min) ;
-$Nextweek->modify('+7 day');
+$NextDate =date_create($min) ;
 $i = 1;
 
-    echo '<table border = "1">
-    <th>OrderID</th> 
-    <th>CustomerID</th> 
-    <th>Firstname</th> 
-    <th>Lastname</th> 
-    <th>Date</th> 
-    <th>Extrabed</th> 
-    <th>RoomID</th> 
-    <th>RoomGrade</th> 
-    <th>RoomPrice</th> 
-    ';
 
       while ($row = mysqli_fetch_array($result)){
+        $Date = $row["Date"];
+        $CurrentDate =date_create($Date) ;
+        if($CurrentDate>=$NextDate){
+            
+            echo '</table><br>';
+            echo '<table border = "1">
+            <th>OrderID</th> 
+            <th>CustomerID</th> 
+            <th>Firstname</th> 
+            <th>Lastname</th> 
+            <th>Date</th> 
+            <th>Extrabed</th> 
+            <th>RoomID</th> 
+            <th>RoomGrade</th> 
+            <th>RoomPrice</th>';
+            $NextDate->modify('+1 day');
+            echo "Day ".$i;
+            $i++;
+        }
         echo '<tr>';
               echo '<td>'.$row["OrderID"].'&nbsp;</td>'."\n";
               echo '<td>'.$row["CustomerID"].'&nbsp;</td>'."\n";
@@ -44,24 +51,8 @@ $i = 1;
               echo '<td>'.$row["RoomGrade"].'&nbsp;</td>'."\n";
               echo '<td>'.$row["RoomPrice"].'&nbsp;</td>'."\n";
           echo '</tr>';
-          $Date = $row["Date"];
-          $CurrentDate =date_create($Date) ;
-        if($CurrentDate>=$Nextweek){
-            echo "Week ".$i;
-            echo '</table>';
-            echo '<table border = "1">
-            <th>OrderID</th> 
-            <th>CustomerID</th> 
-            <th>Firstname</th> 
-            <th>Lastname</th> 
-            <th>Date</th> 
-            <th>Extrabed</th> 
-            <th>RoomID</th> 
-            <th>RoomGrade</th> 
-            <th>RoomPrice</th>';
-            $Nextweek->modify('+7 day');
-            $i++;
-        }
+
+
       }
       echo '</table>';
     
