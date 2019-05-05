@@ -24,20 +24,12 @@
 <input type="submit" name="button" value="insertByID" />
 </form>
 
-<form action="Update/UpdateCustomerinput.php" method="post">
-<input type="submit" name="button" value="Update" />
+<form action="DeleteUpdate/SelectCustomer.php" method="post">
+<input type="submit" name="button" value="Delete/Update Customer" />
 </form>
 
-<form action="Update/UpdateStayinput.php" method="post">
-<input type="submit" name="button" value="Update" />
-</form>
-
-<form action="DeleteUpdate/InputDeleteCustomer.php" method="post">
-<input type="submit" name="button" value="DeleteCustomer" />
-</form>
-
-<form action="DeleteUpdate/InputDeleteStaydetail.php" method="post">
-<input type="submit" name="button" value="DeleteStaydetail" />
+<form action="DeleteUpdate/SelectStaydetail.php" method="post">
+<input type="submit" name="button" value="Delete/Update Staydetail" />
 </form>
 
 <form action="Search/input.php" method="post">

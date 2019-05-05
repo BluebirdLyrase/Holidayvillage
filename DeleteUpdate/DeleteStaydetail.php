@@ -11,5 +11,5 @@ if($result){
     echo mysqli_error($connect);
 }
 mysqli_close($connect);
-include 'InputDeleteStaydetail.php';
+include 'SelectStaydetail.php';
 ?>

@@ -12,5 +12,5 @@ if($result&&$result_deleteDetail){
     echo mysqli_error($connect);
 }
 mysqli_close($connect);
-include 'InputDeleteCustomer.php';
+include 'SelectCustomer.php';
 ?>

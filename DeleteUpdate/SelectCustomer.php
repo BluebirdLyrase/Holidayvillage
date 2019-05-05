@@ -9,15 +9,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
-
   <body>
-
-
     <?php
-    
     $connect = mysqli_connect("localhost","root","","holidayvillage");
     if(!isset($smtDelete)){
-        $sql = 'SELECT * FROM staydetail';
+        $sql = 'SELECT * FROM customer';
         $result = mysqli_query($connect, $sql);
         $numrows = mysqli_num_rows($result);
         $numfields = mysqli_num_fields($result);
@@ -27,31 +23,38 @@
             echo '<b>There is no customer to delete!</b>';
         }else{
             echo  ('<div class="container mt-3">
-      <table class="table table-dark table-striped text-center">
+      <table class="table table-dark table-striped text-center" >
           <thead>
               <tr>
-                  <th>OrderID</th>
-                  <th>Customer ID</th>
-                  <th>Date</th>
-                  <th>Extra Bed</th>
-                  <th>Room</th>
-                  <th><i class="far fa-calendar-minus fa-2x"></i></th>
+                  <th>ID</th>
+                  <th>First Name</th>
+                  <th>Lastname</th>
+                  <th><i class="fas fa-user-minus fa-2x"></i></th>
               </tr>
           </thead>');
             while ($row = mysqli_fetch_array($result)){
-                echo '<form name = "frmDelete'.$row['OrderID'].'"method = "post" action = "DeleteStaydetail.php">'."\n";
+              //////////////Delete//////////////////
+                echo '<form name = "frmDelete'.$row['CustomerID'].'"method = "post" action = "DeleteCustomer.php">'."\n";
                 echo '<tr>';
                 for($i = 0; $i < $numfields; $i++){
                     echo '<td>'.$row[$i].'&nbsp;</td>'."\n";
                 }
-                echo '<input type = "hidden" name = "id" value = "'.$row['OrderID'].'"  >'."\n";
+                echo '<input type = "hidden" name = "id" value = "'.$row['CustomerID'].'"  >'."\n";
                 echo '<td><input class="btn btn-danger" name = "smtDelete" type = "submit" value = "Delete" onClick = "return confirmDelete();"></td>'."\n";
+                echo '</form>'."\n";
+              //////////////Update//////////////////
+                echo '<form name = "frmUpdate'.$row['CustomerID'].'"method = "post" action = "InputUpdateCustomer.php">'."\n";
+                echo '<input type = "hidden" name = "id" value = "'.$row['CustomerID'].'"  >'."\n";
+                echo '<td><input class="btn btn-danger" name = "smtUpdate" type = "submit" value = "Update" ></td>'."\n";
                 echo '</tr>'."\n";
                 echo '</form>'."\n";
             }
+
+
             echo '</table>';
         }
     }
+    
     mysqli_close($connect);
     ?>
     <br><input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'" value="Back"> </button>
