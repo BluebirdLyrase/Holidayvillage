@@ -16,7 +16,7 @@
     <?php
     
     $connect = mysqli_connect("localhost","root","","holidayvillage");
-    if(!isset($smtDelete)){
+
         $sql = 'SELECT * FROM staydetail';
         $result = mysqli_query($connect, $sql);
         $numrows = mysqli_num_rows($result);
@@ -58,7 +58,7 @@
             }
             echo '</table>';
         }
-    }
+
     mysqli_close($connect);
     ?>
     <br><input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'" value="Back"> </button>
