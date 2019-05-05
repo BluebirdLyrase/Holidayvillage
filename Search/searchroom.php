@@ -16,7 +16,7 @@ if(!$result){
     echo '<table border = "1">
     <th>OrderID</th> 
     <th>CustomerID</th> 
-    <th>Firstname,</th> 
+    <th>Firstname</th> 
     <th>Lastname</th> 
     <th>Date</th> 
     <th>Extrabed</th> 
@@ -38,4 +38,4 @@ if(!$result){
       echo '</table>';
 }
 ?>
-<input type="button" name="back" class="btn btn-primary" onclick="location.href="input.php"" value="Back"> </button>
+<input type="button" name="back" class="btn btn-primary" onclick="location.href='input.php'" value="Back"> </button>

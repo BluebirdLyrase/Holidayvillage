@@ -37,10 +37,25 @@ $connect = mysqli_connect("localhost","root","","holidayvillage");
 $sql ='SELECT *
 FROM room';
 $result = mysqli_query($connect,$sql);
-echo "Start Date : <input type='date' class='form-control' name='CheckIn'><br><br>";
-echo "End Date : <input type='date' class='form-control' name='CheckOut'><br><br>";
+echo "Start Date : <input type='date' name='CheckIn'><br><br>";
+echo "End Date : <input type='date' name='CheckOut'><br><br>";
 
 ?>
 <input type="submit" name="button" value="SearchDate" />
-<input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'" value="Back"> </button>
 </form>
+
+<br><br> Report <br><br>
+
+<form action="reportdate.php" method="post">
+<input type="submit" name="button" value="reportdate" />
+</form>
+
+<form action="reportweek.php" method="post">
+<input type="submit" name="button" value="reportweek" />
+</form>
+
+<form action="reportmonth.php" method="post">
+<input type="submit" name="button" value="reportmonth" />
+</form>
+
+<input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'" value="Back"> </button>

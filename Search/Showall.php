@@ -15,7 +15,7 @@ if(!$result){
     echo '<table border = "1">
     <th>OrderID</th> 
     <th>CustomerID</th> 
-    <th>Firstname,</th> 
+    <th>Firstname</th> 
     <th>Lastname</th> 
     <th>Date</th> 
     <th>Extrabed</th> 
