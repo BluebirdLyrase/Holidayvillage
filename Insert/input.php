@@ -30,11 +30,15 @@
                                 placeholder="Jaidee">
                             <small id="helpFname" class="form-text text-muted">Your lastname</small>
                             <div class="form-group">
-                                <label for="Customertype">Customer type:</label>
-                                <select class="form-control" name="Customertype">
-                                    <option value="new">New Customer</option>
-                                    <option value="old">Old Customer</option>
-                                </select>
+                            Extra Bed:
+                        <div class="form-check form-check-inline">
+                            <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="ExtraBed" value="0" checked> No 
+                                <label class="form-check-label">
+                                <input class="form-check-input" type="radio" name="ExtraBed" value="1" > Yes
+                            </label>
+                            </label>
+                        </div>
                             </div>
                 </div>
             </div>
@@ -49,15 +53,7 @@
                             <label for="CheckOut">Check-Out Date</label>
                             <input type="date" class="form-control" name="CheckOut">
                         </div>
-                        Extra Bed:
-                        <div class="form-check form-check-inline">
-                            <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="ExtraBed" value="0" checked> No 
-                                <label class="form-check-label">
-                                <input class="form-check-input" type="radio" name="ExtraBed" value="1" > Yes
-                            </label>
-                            </label>
-                        </div>
+
                         <div class="form-group">
                             <label for="">Room ID:</label>
                             <select class="form-control" name="RoomID">

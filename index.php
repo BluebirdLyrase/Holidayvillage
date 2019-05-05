@@ -17,11 +17,11 @@
 ื   <div class="container">
 
 <form action="Insert/input.php" method="post">
-<input type="submit" name="button" value="insert" />
+<input type="submit" name="button" value="Insert New Customer" />
 </form>
 
 <form action="Insert/inputByID.php" method="post">
-<input type="submit" name="button" value="insertByID" />
+<input type="submit" name="button" value="insert OLD Customer (insertByID)" />
 </form>
 
 <form action="DeleteUpdate/SelectCustomer.php" method="post">

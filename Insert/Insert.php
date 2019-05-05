@@ -9,7 +9,6 @@ $RoomID = $_POST["RoomID"];
 $checkIn = $_POST["CheckIn"];
 $checkOut = $_POST["CheckOut"];
 $extraBed = $_POST["ExtraBed"];
-$customerType = $_POST["Customertype"];
 $connect = mysqli_connect("localhost","root","","Holidayvillage");
 console_log("sdfsdf");
 ///////////////////////ตรวจสอบ check in out ก่อนสตรวจสอบอย่างอื่น ป้องกัน $ADate เน่า///////////////////////
@@ -18,15 +17,9 @@ if(checkinoutValidation($checkIn,$checkOut,$connect)){
     $ADate = getADate($checkIn,$checkOut);
     if(validateCustomer($FName,$LName)&&DateRoomValidation($RoomID,$ADate,$connect)){
         console_log("Valid FName LName RoomID");
-        if($customerType=="new"){
             insertCustomer($FName,$LName,$connect);
-            }///if
             $CustomerID = getCustomerID($FName,$LName,$connect);
-            if($CustomerID!=Null){
             insertStaydetail($ADate,$RoomID,$extraBed,$CustomerID,$connect);
-            }else{
-            echo "Firstname and Lastname don't match the existing ID";
-            }
             mysqli_close($connect);
             include 'input.php';
         }else{
