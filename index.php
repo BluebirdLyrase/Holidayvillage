@@ -20,6 +20,7 @@
 <input type="submit" name="button" value="Insert New Customer" />
 </form>
 
+
 <form action="Insert/inputByID.php" method="post">
 <input type="submit" name="button" value="insert OLD Customer (insertByID)" />
 </form>
