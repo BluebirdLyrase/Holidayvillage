@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+session_start();
+?>
 <head>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
@@ -14,6 +17,15 @@
 </head>
 
 <body>
+<?php
+
+if($_SESSION['loggedIn']==false){
+    header('Location:Login.php');  
+}else{
+
+}
+
+?>
 ื   <div class="container">
 
 <form action="Insert/input.php" method="post">
