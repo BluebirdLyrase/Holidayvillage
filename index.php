@@ -20,12 +20,9 @@ session_start();
 
 <body>
     <?php
- echo $_SESSION['logedIn'];
- 
 if($_SESSION['logedIn']!=true){
     header('Location:Login.php');  
 }else{
-
 }
 
 ?>
