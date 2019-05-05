@@ -16,7 +16,7 @@ console_log("sdfsdf");
 if(checkinoutValidation($checkIn,$checkOut,$connect)){
     console_log("Valid checkin checkout Value ");
     $ADate = getADate($checkIn,$checkOut);
-    if(validateCustomer($FName,$LName,$connect)&&DateRoomValidation($RoomID,$ADate,$connect)){
+    if(validateCustomer($FName,$LName)&&DateRoomValidation($RoomID,$ADate,$connect)){
         console_log("Valid FName LName RoomID");
         if($customerType=="new"){
             insertCustomer($FName,$LName,$connect);

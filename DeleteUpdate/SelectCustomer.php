@@ -18,7 +18,7 @@
         $numrows = mysqli_num_rows($result);
         $numfields = mysqli_num_fields($result);
         if(!$result){
-            echo '<b>Error </b>'.mysqli_error().': '.mysqli_error().'<br>';
+            echo '<b>Error </b>'.mysqli_error($connect);'<br>';
         }elseif($numrows == 0){
             echo '<b>There is no customer to delete!</b>';
         }else{
@@ -45,6 +45,8 @@
               //////////////Update//////////////////
                 echo '<form name = "frmUpdate'.$row['CustomerID'].'"method = "post" action = "InputUpdateCustomer.php">'."\n";
                 echo '<input type = "hidden" name = "id" value = "'.$row['CustomerID'].'"  >'."\n";
+                echo '<input type = "hidden" name = "Fname" value = "'.$row['Fname'].'"  >'."\n";
+                echo '<input type = "hidden" name = "Lname" value = "'.$row['Lname'].'"  >'."\n";
                 echo '<td><input class="btn btn-danger" name = "smtUpdate" type = "submit" value = "Update" ></td>'."\n";
                 echo '</tr>'."\n";
                 echo '</form>'."\n";

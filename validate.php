@@ -24,7 +24,7 @@ function DateRoomValidation($thisRoomID,$thisADate,$thisconnect){
            where RoomID="'.$thisRoomID.'"';
     $result = mysqli_query($connect,$sql);
     if(!$result){
-        echo mysqli_error($connect);
+        alert("Cannot Access Database");
     }else{
          
     

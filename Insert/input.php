@@ -46,7 +46,7 @@
                             <input type="date" class="form-control" name="CheckIn">
                         </div>
                         <div class="form-group">
-                            <label for="CheckOut">Check-Out date</label>
+                            <label for="CheckOut">Check-Out Date</label>
                             <input type="date" class="form-control" name="CheckOut">
                         </div>
                         Extra Bed:

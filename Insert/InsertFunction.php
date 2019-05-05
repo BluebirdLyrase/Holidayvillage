@@ -9,7 +9,7 @@ function insertStaydetail($thisADate,$thisRoomID,$thisExtraBed,$thisCustomerID,$
     $result = mysqli_query($connect,$sql);
 }
 if(!$result){
-    alert(mysqli_error($connect));
+    echo mysqli_error($connect);
 }
     else{
 alert("insert Staydetail Successfully");

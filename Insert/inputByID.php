@@ -40,8 +40,8 @@ while ($row = mysqli_fetch_array($result,MYSQLI_NUM)){
 mysqli_close($connect)
 ?>
 </select><br><br>
-<input type="date" class="form-control" name="CheckIn"><br><br>
-<input type="date" class="form-control" name="CheckOut"><br><br>
+Check-In Date : <input type="date" class="form-control" name="CheckIn"><br><br>
+CheckOut Date : <input type="date" class="form-control" name="CheckOut"><br><br>
 <input type="submit" name="someAction" value="submit">
 </form>
 
