@@ -1,4 +1,7 @@
 <!doctype html>
+<?php
+
+?>
 <html lang="en">
 
 <head>
@@ -26,7 +29,7 @@
 <div class="col-4">
 </div>
 <div class="col-4">
-        <form class="form-inline text-center">
+        <form class="form-inline text-center" action="loginAuthen.php" method="post">
                 <div class="card">
                     <div class="card-header">
                         Sign-in
@@ -43,7 +46,7 @@
                             <div class="form-group">
                                 <label for="userName">Password:&nbsp;</label>
                                 <input type="password" class="form-control" name="password" id="password"
-                                    aria-describedby="password" placeholder="*********">
+                                    aria-describedby="password">
                             </div>
                         </h4>
                         <button type="submit" class="btn btn-primary">Log-in</button>
@@ -54,7 +57,7 @@
     <div class="col-4">
     </div>
 </div>
-    
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
