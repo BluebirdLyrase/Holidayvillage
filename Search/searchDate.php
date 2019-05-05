@@ -1,4 +1,5 @@
 <?php
+
 $CheckIn=$_POST['CheckIn'];
 $CheckOut=$_POST['CheckOut'];
 $connect = mysqli_connect("localhost","root","","holidayvillage");
@@ -8,7 +9,7 @@ join customer as c
 on c.CustomerID = s.CustomerID
 join room as r
 on r.RoomID = s.RoomID
-where s.Date BETWEEN '.$CheckIn.' AND '.$CheckOut.'
+where s.Date BETWEEN "'.$CheckIn.'" AND "'.$CheckOut.'"
 ';
 $result = mysqli_query($connect,$sql);
 if(!$result){
