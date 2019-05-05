@@ -33,7 +33,6 @@ if(!$result){
               echo '<td>'.$row[$i].'&nbsp;</td>'."\n";
           }
           echo '</tr>';
-        //////////////Update//////////////////
       }
 }
 
