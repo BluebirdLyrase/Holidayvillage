@@ -13,7 +13,7 @@
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <div class="container">
-    <h4 class="text-center"><b>Insert</b></h4>
+    <h4 class="text-center"><b>Insert New Customer</b></h4>
     <br><br>
     <div class="container">
         <div class="card-group">
@@ -46,7 +46,7 @@
                 <div class="card-body">
                     <h4 class="card-title">
                         <div class="form-group">
-                            <label for="CheckIn">Check-in Date</label>
+                            <label for="CheckIn">Check-In Date</label>
                             <input type="date" class="form-control" name="CheckIn">
                         </div>
                         <div class="form-group">
