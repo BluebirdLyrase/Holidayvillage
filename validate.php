@@ -26,9 +26,7 @@ function DateRoomValidation($thisRoomID,$thisADate,$thisconnect){
     if(!$result){
         alert("Cannot Access Database");
     }else{
-         
-    
-    
+
     $numrows = mysqli_num_rows($result);
     /////////////////////////Validation///////////////////////////////
         while ($row = mysqli_fetch_array($result)){
