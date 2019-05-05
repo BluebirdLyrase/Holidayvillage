@@ -30,3 +30,16 @@ while ($row = mysqli_fetch_array($result,MYSQLI_NUM)){
 ?>
 <input type="submit" name="button" value="SearchRoom" />
 </form>
+
+<form action="searchDate.php" method="post">
+<?php
+$connect = mysqli_connect("localhost","root","","holidayvillage");
+$sql ='SELECT *
+FROM room';
+$result = mysqli_query($connect,$sql);
+echo "Check-In Date : <input type='date' class='form-control' name='CheckIn'><br><br>";
+echo "CheckOut Date : <input type='date' class='form-control' name='CheckOut'><br><br>";
+
+?>
+<input type="submit" name="button" value="SearchDate" />
+</form>

@@ -1,6 +1,5 @@
 <?php
-
-
+$CustomerName=$_POST['CustomerName'];
 $connect = mysqli_connect("localhost","root","","holidayvillage");
 $sql ='SELECT s.OrderID,s.CustomerID,c.Fname,c.Lname,s.Date,s.Extrabed,r.RoomID,R.RoomGrade,r.RoomPrice
 FROM staydetail as s
@@ -8,6 +7,7 @@ join customer as c
 on c.CustomerID = s.CustomerID
 join room as r
 on r.RoomID = s.RoomID
+where c.Fname = "'.$CustomerName.'"
 ';
 $result = mysqli_query($connect,$sql);
 if(!$result){
