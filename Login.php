@@ -10,15 +10,26 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+        body{
+            margin-top:300px;
+            padding-left:170px;
+        }
+        
+        </style>
 </head>
 
+
 <body>
-    <div class="container">
-        <form class="form-inline">
-            <div class="form-group">
+<div class="container-fluid">
+<div class="row">
+<div class="col-4">
+</div>
+<div class="col-4">
+        <form class="form-inline text-center">
                 <div class="card">
-                    <div class="card-header text-center">
-                        Sign-In
+                    <div class="card-header">
+                        Sign-in
                     </div>
                     <div class="card-body">
                         <h4 class="card-title">
@@ -26,23 +37,24 @@
                                 <label for="userName">Username: </label>
                                 <input type="text" class="form-control" name="userName" id="userName"
                                     aria-describedby="Username" placeholder="abc0123">
-                                <small id="helpId" class="form-text text-muted">Type your Username</small>
                             </div>
                         </h4>
-                        <div class="card-body">
-                            <h4 class="card-title">
-                                <div class="form-group">
-                                    <label for="userName">Username: </label>
-                                    <input type="text" class="form-control" name="userName" id="userName"
-                                        aria-describedby="Username" placeholder="abc0123">
-                                    <small id="helpId" class="form-text text-muted">Type your Username</small>
-                                </div>
-                            </h4>
-                        </div>
+                        <h4 class="card-title">
+                            <div class="form-group">
+                                <label for="userName">Password:&nbsp;</label>
+                                <input type="password" class="form-control" name="password" id="password"
+                                    aria-describedby="password" placeholder="*********">
+                            </div>
+                        </h4>
+                        <button type="submit" class="btn btn-primary">Log-in</button>
         </form>
-
     </div>
     </div>
+    </div>
+    <div class="col-4">
+    </div>
+</div>
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
