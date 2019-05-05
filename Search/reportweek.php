@@ -16,14 +16,14 @@ $minresult = mysqli_query($connect,$minsql);
 while ($row = mysqli_fetch_array($minresult)){ 
     $min = $row["MIN(Date)"];
 }
-$NextDate =date_create($min) ;
+$Nextweek =date_create($min) ;
 $i = 1;
 
 
       while ($row = mysqli_fetch_array($result)){
         $Date = $row["Date"];
         $CurrentDate =date_create($Date) ;
-        if($CurrentDate>=$NextDate){
+        if($CurrentDate>=$Nextweek){
             
             echo '</table><br>';
             echo '<table border = "1">
@@ -36,8 +36,8 @@ $i = 1;
             <th>RoomID</th> 
             <th>RoomGrade</th> 
             <th>RoomPrice</th>';
-            $NextDate->modify('+1 day');
-            echo "Day ".$i;
+            $Nextweek->modify('+7 day');
+            echo "Week ".$i;
             $i++;
         }
         echo '<tr>';
