@@ -55,7 +55,5 @@ $i = 1;
 
       }
       echo '</table>';
-    
-
-
 ?>
+<input type="button" name="back" class="btn btn-primary" onclick="location.href='input.php'" value="Back"> </button>

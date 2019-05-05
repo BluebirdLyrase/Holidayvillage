@@ -51,11 +51,7 @@ $i = 1;
               echo '<td>'.$row["RoomGrade"].'&nbsp;</td>'."\n";
               echo '<td>'.$row["RoomPrice"].'&nbsp;</td>'."\n";
           echo '</tr>';
-
-
       }
       echo '</table>';
-    
-
-
 ?>
+<input type="button" name="back" class="btn btn-primary" onclick="location.href='input.php'" value="Back"> </button>
