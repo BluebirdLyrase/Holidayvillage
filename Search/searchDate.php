@@ -1,7 +1,8 @@
 <?php
-
+include '../script.php';
 $CheckIn=$_POST['CheckIn'];
 $CheckOut=$_POST['CheckOut'];
+if($CheckIn<=$CheckOut){
 $connect = mysqli_connect("localhost","root","","holidayvillage");
 $sql ='SELECT s.OrderID,s.CustomerID,c.Fname,c.Lname,s.Date,s.Extrabed,r.RoomID,R.RoomGrade,r.RoomPrice
 FROM staydetail as s
@@ -37,7 +38,11 @@ if(!$result){
           echo '</tr>';
         //////////////Update//////////////////
       }
+      echo '</table>';
 }
-
-
+echo '<input type="button" name="back" class="btn btn-primary" onclick="location.href="input.php"" value="Back"> </button>';
+}else{
+  alert("invalid date");
+  include 'input.php';
+}
 ?>

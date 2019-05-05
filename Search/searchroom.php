@@ -35,7 +35,7 @@ if(!$result){
           echo '</tr>';
         //////////////Update//////////////////
       }
+      echo '</table>';
 }
-
-
 ?>
+<input type="button" name="back" class="btn btn-primary" onclick="location.href="input.php"" value="Back"> </button>

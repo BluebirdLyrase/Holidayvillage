@@ -37,9 +37,10 @@ $connect = mysqli_connect("localhost","root","","holidayvillage");
 $sql ='SELECT *
 FROM room';
 $result = mysqli_query($connect,$sql);
-echo "Check-In Date : <input type='date' class='form-control' name='CheckIn'><br><br>";
-echo "CheckOut Date : <input type='date' class='form-control' name='CheckOut'><br><br>";
+echo "Start Date : <input type='date' class='form-control' name='CheckIn'><br><br>";
+echo "End Date : <input type='date' class='form-control' name='CheckOut'><br><br>";
 
 ?>
 <input type="submit" name="button" value="SearchDate" />
+<input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'" value="Back"> </button>
 </form>
