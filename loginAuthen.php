@@ -4,7 +4,7 @@ include('script.php');
 
 $userName=$_POST['userName'];
 $password=$_POST['password'];
-
+$_SESSION['logedIn']=false;
 
 
     ////////////////////////Database Prepare////////////////////////
@@ -21,12 +21,15 @@ $password=$_POST['password'];
                 while ($row = mysqli_fetch_array($result_Username)){
                 
                 if ($userName==$row['username'] && $password==$row['password']) {
-                    $SESSION_['logedIn']=true;
+                    $_SESSION['logedIn']=true;
                     header('Location:index.php');
+                    exit();
                 }else
-                $SESSION_['logedIn']=false;
+                
                 alert('Invalid Username or Password');
                 include('Login.php');
+                $_SESSION['logedIn']=false;
+                exit();
 
             }
             }
