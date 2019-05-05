@@ -37,7 +37,7 @@ $i = 1;
             <th>RoomGrade</th> 
             <th>RoomPrice</th>';
             $Nextweek->modify('+7 day');
-            echo "Week ".$i;
+            echo "<b>Week ".$i."</b>";
             $i++;
         }
         echo '<tr>';

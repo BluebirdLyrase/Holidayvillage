@@ -37,7 +37,7 @@ $i = 1;
             <th>RoomGrade</th> 
             <th>RoomPrice</th>';
             $Nextmonth->modify('first day of next month');
-            echo "month ".$i;
+            echo "<b>month ".$i."</b>";
             $i++;
         }
         echo '<tr>';

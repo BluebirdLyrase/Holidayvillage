@@ -37,7 +37,7 @@ $i = 1;
             <th>RoomGrade</th> 
             <th>RoomPrice</th>';
             $NextDate->modify('+1 day');
-            echo "Day ".$i;
+            echo "<b>Day ".$i."</b>";
             $i++;
         }
         echo '<tr>';
