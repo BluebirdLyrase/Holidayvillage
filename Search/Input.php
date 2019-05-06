@@ -16,7 +16,7 @@
 <body>
     <div class="row mt-5">
         <div class="card col-2 border-primary">
-            <h4 class="card-title"> Get report <br><br>
+            <h4 class="card-title"> <h3 class="text-center"><br>Get report <br><br>
 
                 <form action="reportdate.php" method="post">
                     <input type="submit" class="btn btn-primary" name="button" value="reportdate" />
@@ -28,7 +28,7 @@
 
                 <form action="reportmonth.php" method="post"><br>
                     <input type="submit" class="btn btn-primary" name="button" value="reportmonth" />
-                </form><br>
+                </form><br><br><br>
                 <input type="button" name="back" class="btn btn-primary" onclick="location.href='../index.php'"
                     value="Back">
                 </button>
@@ -37,10 +37,10 @@
     <div class="card border-primary col-5">
         <div class="card-body">
             <h4 class="card-title">
-                <h3 class="text-center">Search from history <i class="fa fa-history" aria-hidden="true"></i></h3>
+                <h3 class="text-center">Search<i class="fa fa-history" aria-hidden="true"></i></h3>
             </h4>
             <form action="Showall.php" method="post">
-                <b> Show all history: </b> <input type="submit" class="btn btn-primary" name="button" value="Click!" />
+                <b> Show all Data: </b> <input type="submit" class="btn btn-primary" name="button" value="Click!" />
 
             </form><br>
             <form action="searchcustomer.php" method="post">

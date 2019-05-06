@@ -9,7 +9,9 @@ $Date = $_POST['Date'];
 $connect = mysqli_connect("localhost","root","","holidayvillage");
 $ADate = array();
 $ADate[0] = $Date;
-if(DateRoomValidation($RoomID,$ADate,$connect)){
+$OldDate = $_POST['OldDate'];
+$update = 'AND Date != "'.$OldDate.'"';
+if(DateRoomValidation($RoomID,$ADate,$connect,$update)){
     $connect = mysqli_connect("localhost","root","","Holidayvillage");
     $sql ='update staydetail
     set 

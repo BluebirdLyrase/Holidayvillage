@@ -17,7 +17,7 @@ if(checkinoutValidation($checkIn,$checkOut,$connect)){
     console_log("Valid checkin checkout Value ");
     $ADate = getADate($checkIn,$checkOut);
 
-    if(DateRoomValidation($RoomID,$ADate,$connect)){
+    if(DateRoomValidation($RoomID,$ADate,$connect,"")){
         console_log("Valid CustomerID");
             if($CustomerID!=Null){
             insertStaydetail($ADate,$RoomID,$extraBed,$CustomerID,$connect);

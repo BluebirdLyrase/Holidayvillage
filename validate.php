@@ -16,15 +16,16 @@ if($refDate<=$maxDate){
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
-function DateRoomValidation($thisRoomID,$thisADate,$thisconnect){
+function DateRoomValidation($thisRoomID,$thisADate,$thisconnect,$thisupdate){
     ////////////////////////Database Prepare////////////////////////
     $connect = $thisconnect;
     $sql ='select date
            from staydetail 
-           where RoomID="'.$thisRoomID.'"';
+           where RoomID="'.$thisRoomID.'"'.$thisupdate;
     $result = mysqli_query($connect,$sql);
     if(!$result){
         alert("Cannot Access Database");
+        echo mysqli_error($connect);
     }else{
 
     $numrows = mysqli_num_rows($result);
