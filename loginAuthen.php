@@ -24,7 +24,7 @@ $_SESSION['logedIn']=false;
                     $_SESSION['logedIn']=true;
                     header('Location:index.php');
                     exit();
-                }else
+                }else{
                 
                 alert('Invalid Username or Password');
                 include('Login.php');
