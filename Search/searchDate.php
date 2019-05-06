@@ -40,7 +40,8 @@ if(!$result){
       }
       echo '</table>';
 }
-echo '<input type="button" name="back" class="btn btn-primary" onclick="location.href="input.php"" value="Back"> </button>';
+$input = "'input.php'";
+echo '<input type="button" name="back" class="btn btn-primary" onclick="location.href='.$input.'" value="Back"> </button>';
 }else{
   alert("invalid date");
   include 'input.php';
