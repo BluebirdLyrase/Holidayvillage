@@ -53,6 +53,7 @@
                 echo '<form name = "frmUpdate'.$row['OrderID'].'"method = "post" action = "InputUpdateStaydetail.php">'."\n";
                 echo '<input type = "hidden" name = "id" value = "'.$row['OrderID'].'"  >'."\n";
                 echo '<input type = "hidden" name = "Date" value = "'.$row['Date'].'"  >'."\n";
+                echo '<input type = "hidden" name = "RoomID" value = "'.$row['RoomID'].'"  >'."\n";
                 echo '<td><input class="btn btn-danger" name = "smtUpdate" type = "submit" value = "Update" ></td>'."\n";
                 echo '</tr>'."\n";
                 echo '</form>'."\n";

@@ -73,6 +73,7 @@ mysqli_close($connect);
 echo "</select><br>";
 echo "Date: <input type='date' class='form-control col-6' name='Date' value =".$_POST['Date']."><br>";
 echo '<input type = "hidden" name = "OldDate" value = "'.$_POST['Date'].'"  >'."\n";
+echo '<input type = "hidden" name = "OldRoomID" value = "'.$_POST['RoomID'].'"  >'."\n";
 ?>
 
  </div>
